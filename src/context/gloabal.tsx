@@ -2,6 +2,7 @@ import React, { createContext, useContext, useReducer } from "react";
 import mainReducer from "./reducers/mainReducer";
 
 const mainContext = createContext<any>(undefined);
+
 const mainDispatchContext = createContext<any>(undefined);
 const initialState: any = { ListMovie: [] };
 

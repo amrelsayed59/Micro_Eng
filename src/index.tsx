@@ -5,7 +5,7 @@ import { MainProvider } from "./context/gloabal";
 
 ReactDOM.render(
   <MainProvider>
-    <Header/>
+    <Header />
     <App />
   </MainProvider>,
   document.querySelector("#root")

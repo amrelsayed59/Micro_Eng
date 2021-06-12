@@ -28,9 +28,10 @@ const Movies: React.FC<any> = () => {
 
   //fetch movies from context
   const fetchMovies = useFetchMovies(listId);
-  console.log(fetchMovies);
 
-  const AllMovies = fetchMovies.map((res: any) => <List res={res} />);
+  const AllMovies = fetchMovies.map((res: any) => (
+    <List res={res} key={res.imdbID} />
+  ));
 
   return (
     <>

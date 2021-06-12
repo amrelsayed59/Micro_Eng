@@ -1,5 +1,5 @@
 .movie-section {
-  background: #000;
+  background: $black;
   html {
     box-sizing: border-box;
     background-color: #dce1e5;
@@ -67,7 +67,7 @@
     padding-right: 1em;
 
     & .movie-title {
-      color: #ffffff;
+      color: $white;
       margin-bottom: 0.25em;
       opacity: 0.75;
     }
@@ -161,7 +161,7 @@
       font-size: 35px;
       line-height: 30px;
       font-weight: 700;
-      color: #fff;
+      color: $white;
       margin: 2rem 0;
       font-family: cursive;
     }
@@ -169,7 +169,7 @@
       font-size: 16px;
       line-height: 30px;
       font-weight: 700;
-      color: #fff;
+      color: $white;
       margin: 1rem 0;
     }
     .title-data-info-item {
@@ -186,7 +186,7 @@
       font-size: 16px;
       line-height: 22px;
       font-weight: 400;
-      color: #fff;
+      color: $white;
     }
   }
   .movie-img {
@@ -203,7 +203,7 @@
   padding: 0.5rem 2rem;
   background: $secondary-color;
   border: none;
-  color: #fff;
+  color: $white;
   border-radius: 2px;
   text-transform: uppercase;
   font-weight: bold;

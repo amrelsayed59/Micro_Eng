@@ -2,36 +2,30 @@ import { useEffect, useState } from "react";
 import Axios from "axios";
 import { useMainDispatch, useMainState } from "../context/gloabal";
 
+const API_KEY: string = process.env.REACT_APP_API_KEY as string;
 
-// export interface Service {
-//   results: string;
-//   data: string;
-//   status:any
-// }
-
-const useFetchMovies = (ListId:string[]) => {
-  const API_KEY = 'bbf5cbce';
-  const dispatch=useMainDispatch()
-  const useMain=useMainState()
+const useFetchMovies = (ListId: string[]) => {
+  const dispatch = useMainDispatch();
+  const useMain = useMainState();
   const [result, setResult] = useState([]);
 
-
   const requestMovie = async function () {
-    ListId.forEach(async element => {
+    ListId.forEach(async (element) => {
       try {
-        const res = await Axios.get(`http://www.omdbapi.com/?apikey=${API_KEY}&i=${element}`)
-        dispatch({type:"setMovie",payload:res.data})
-      } 
-      catch (error) {
-          console.log(error);
+        const res = await Axios.get(
+          `http://www.omdbapi.com/?apikey=${API_KEY}&i=${element}`
+        );
+        dispatch({ type: "setMovie", payload: res.data });
+      } catch (error) {
+        console.log("Error", error);
       }
     });
   };
 
   useEffect(() => {
-    dispatch({type:"restMovie",payload:[]})
+    dispatch({ type: "restMovie", payload: [] });
     requestMovie();
-    setResult(useMain.ListMovie)
+    setResult(useMain.ListMovie);
   }, []);
 
   return result;

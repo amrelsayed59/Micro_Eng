@@ -8,7 +8,6 @@ const List: React.FC<any> = ({ res }) => {
       <div
         className="movie-card"
         style={{ backgroundImage: `url(${res.Poster})` }}
-        key={res.imdbID}
       >
         <Link className="d-block w-100" to={{ pathname: `/${res.imdbID}` }}>
         <div className="color-overlay">
@@ -23,6 +22,7 @@ const List: React.FC<any> = ({ res }) => {
           </div>
         </div>
         </Link>
+    
       </div>
       
     </>

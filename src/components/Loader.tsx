@@ -4,7 +4,7 @@ const Loader: React.FC<any> = () => {
   const [percentLoaded, setPercentLoaded] = useState<number>(0);
 
   useEffect(() => {
-    setInterval(() => {
+    const interval = setInterval(() => {
       let val = percentLoaded + 100;
       if (percentLoaded >= 100) {
         setPercentLoaded(percentLoaded);
@@ -12,6 +12,7 @@ const Loader: React.FC<any> = () => {
         setPercentLoaded(val);
       }
     }, 100);
+    return clearInterval(interval);
   }, [percentLoaded]);
 
   return (
